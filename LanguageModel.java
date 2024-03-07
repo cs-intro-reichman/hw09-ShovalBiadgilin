@@ -48,7 +48,8 @@ public class LanguageModel {
 			current=probs.getFirstNode();
 			double cumuProab=0.0;
 			while (current !=null){
-				current.cp.p=(double)(current.cp.count/chrTotal);
+				current.cp.p=(double)current.cp.count/chrTotal;
+				
 				cumuProab+=current.cp.p;
 				current.cp.cp=cumuProab;
 				current=current.next;
@@ -58,16 +59,16 @@ public class LanguageModel {
     // Returns a random character from the given probabilities list.
 	public char getRandomChar(List probs) {
 		double random=randomGenerator.nextDouble();
-		char sum=0;
+		char res=0;
 		Node current=probs.getFirstNode();
 		while(current !=null){
 			if (random<current.cp.cp){
-				sum=current.cp.chr;
+				res=current.cp.chr;
 				break;
 			}
 			current=current.next;
 		}
-		return sum;
+		return res;
 	}
 
     /**
@@ -78,7 +79,8 @@ public class LanguageModel {
 	 * @return the generated text
 	 */
 	public String generate(String initialText, int textLength) {
-		return null;
+		String str=" ";
+		return str ;
 	}
 
     /** Returns a string representing the map of this language model. */
