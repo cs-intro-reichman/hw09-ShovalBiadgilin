@@ -6,7 +6,7 @@
 public class List {
 
     // Points to the first node in this list
-    public Node first;
+    private Node first;
 
     // The number of elements in this list
     private int size;
