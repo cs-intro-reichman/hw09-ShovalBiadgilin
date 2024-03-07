@@ -42,7 +42,7 @@ public class LanguageModel {
 		int chrTotal = 0;
 		Node current = probs.getFirstNode();
 		while (current != null) {
-			chrTotal += current.cp.Count;
+			chrTotal += current.cp.count;
 			current = current.next;
                    }
 			current=probs.getFirstNode();
