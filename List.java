@@ -47,7 +47,7 @@ public class List {
         Node current = first;
 			int index = 0;
 			while (current != null) {
-				if (current.chr == chr) {
+				if (current.data == chr) {
 					return index;
 						}
 						current = current.next;
