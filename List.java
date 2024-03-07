@@ -29,9 +29,9 @@ public class List {
 
     /** GIVE Adds a CharData object with the given character to the beginning of this list. */
     public void addFirst(char chr) {
-		Node newNode = new Node( chr); // creates a new node
-		newNode.next = first; // new node ! first node
-		first = newNode; // first ! new node
+		Node newNode = new Node( chr); 
+		newNode.next = first; 
+		first = newNode; 
 		size++;
     }
    
@@ -122,4 +122,5 @@ public class List {
         // Returns an iterator that starts in that element
 	    return new ListIterator(current);
     }
+}
 }
