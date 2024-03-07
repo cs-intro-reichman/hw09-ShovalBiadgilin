@@ -30,12 +30,10 @@ public class List {
     /** GIVE Adds a CharData object with the given character to the beginning of this list. */
     public void addFirst(char chr) {
 		 CharData newData = new CharData(chr);
-
-    // Create a new Node with the CharData object
-    Node newNode = new Node(newData);
-		newNode.next = first; 
-		first = newNode; 
-		size++;
+		 Node newNode = new Node(newData);
+		 newNode.next = first; 
+		 first = newNode; 
+		 size++;
     }
    
 
@@ -56,24 +54,24 @@ public class List {
      *  or -1 if there is no such object in this list. */
     public int indexOf(char chr) {
         Node current = first;
-			int index = 0;
-			while (current != null) {
-				if (current.cp.chr== chr) {
-					return index;
-						}
-						current = current.next;
-						index++;
-						}
-						return -1; // Value not found
-							}
+		int index = 0;
+		while (current != null) {
+			if (current.cp.chr== chr) {
+				return index;
+				}
+			current = current.next;
+			index++;
+				}
+		return -1;
+		}
 
     /** If the given character exists in one of the CharData objects in this list,
      *  increments its counter. Otherwise, adds a new CharData object with the
      *  given chr to the beginning of this list. */
     public void update(char chr) {
-        int index= indexOf(chr);
-		if (index!=-1){
-			CharData chrData=get (index);
+        int indexChr= indexOf(chr);
+		if (indexChr!=-1){
+			CharData chrData=get (indexChr);
 			chrData.count++;
 		}else{
 			addFirst(chr);
@@ -92,8 +90,9 @@ public class List {
 			prev = current;
 			current = current.next;
 			}
-			if (current == null) return false; 
-			
+			if (current == null){
+				return false; 
+			}
 			if (prev == null) { 
 			first = first.next;
 			}
@@ -109,10 +108,10 @@ public class List {
      *  throws an IndexOutOfBoundsException. */
     public CharData get(int index) {
         if (index < 0 || index >= size) {
-        throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
-    }
-		int currentIndex = 0;
+        throw new IndexOutOfBoundsException();
+		}
 		Node current = first;
+		int currentIndex = 0;
 		while (currentIndex < index) {
         current = current.next;
         currentIndex++;
