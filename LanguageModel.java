@@ -33,14 +33,15 @@ public class LanguageModel {
 
     /** Builds a language model from the text in the given file (the corpus). */
 	public void train(String fileName) {
-		// Your code goes here
+		
 	}
 
     // Computes and sets the probabilities (p and cp fields) of all the
 	// characters in the given list. */
 	public void calculateProbabilities(List probs) {				
 		int chrTotal = 0;
-		Node current = probs.getFirstNode();
+		Node current = probs.getFirstNode(); // I tried to write probs.first since the since all the fields are package private. however it didnt work. so 
+		                                     // I created  Get in the List class. Hope its ok. 
 		while (current != null) {
 			chrTotal += current.cp.count;
 			current = current.next;
