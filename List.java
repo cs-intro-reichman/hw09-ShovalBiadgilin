@@ -21,6 +21,9 @@ public class List {
     public int getSize() {
  	      return size;
     }
+	public Node getFirstNode() {
+    return first;
+}
 
     /** Returns the first element in the list */
     public CharData getFirst() {
