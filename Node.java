@@ -25,8 +25,5 @@ public class Node {
     public String toString() {
        return "" + cp;
     }
-	public Node getFirstNode() {
-    return first;
-}
 
  }
