@@ -40,12 +40,12 @@ public class LanguageModel {
 	// characters in the given list. */
 	public void calculateProbabilities(List probs) {				
 		int chrTotal = 0;
-		Node current = probs.first;
+		Node current = probs.getFirstNode();
 		while (current != null) {
 			chrTotal += current.cp.count;
 			current = current.next;
                    }
-			current=probs.first;
+			current=probs.getFirstNode();
 			double cumuProab=0.0;
 			while (current !=null){
 				current.cp.p=(double)(current.cp.count/chrTotal);
