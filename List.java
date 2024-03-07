@@ -29,7 +29,10 @@ public class List {
  .
     /** GIVE Adds a CharData object with the given character to the beginning of this list. */
     public void addFirst(char chr) {
-		Node newNode = new Node( chr); 
+		 CharData newData = new CharData(chr);
+
+    // Create a new Node with the CharData object
+    Node newNode = new Node(newData);
 		newNode.next = first; 
 		first = newNode; 
 		size++;
@@ -47,7 +50,7 @@ public class List {
         Node current = first;
 			int index = 0;
 			while (current != null) {
-				if (current.data == chr) {
+				if (current.cp.chr== chr) {
 					return index;
 						}
 						current = current.next;
@@ -69,7 +72,7 @@ public class List {
     public boolean remove(char chr) {
 			Node prev = null;
 			Node current = first;
-			while (current != null && ccurrent.cp.chr != chr) {
+			while (current != null && current.cp.chr != chr) {
 			prev = current;
 			current = current.next;
 			}
