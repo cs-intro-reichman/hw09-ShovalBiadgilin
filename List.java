@@ -29,8 +29,9 @@ public class List {
 
     /** GIVE Adds a CharData object with the given character to the beginning of this list. */
     public void addFirst(char chr) {
-		CharData charData = new CharData(chr);
-		Node newNode = new Node(charData);
+		 CharData newData = new CharData(chr);
+		Node newNode = new Node(newData);
+
 		newNode.next = first; 
 		first = newNode; 
 		size++;
@@ -48,7 +49,7 @@ public class List {
         Node current = first;
 			int index = 0;
 			while (current != null) {
-				if (current.data == chr) {
+				if (current.cp.getChar() == chr) {
 					return index;
 						}
 						current = current.next;
@@ -56,6 +57,8 @@ public class List {
 						}
 						return -1; // Value not found
 							}
+	
+				
 
     /** If the given character exists in one of the CharData objects in this list,
      *  increments its counter. Otherwise, adds a new CharData object with the
@@ -70,7 +73,7 @@ public class List {
     public boolean remove(char chr) {
 			Node prev = null;
 			Node current = first;
-			while (current != null && current.chr != chr) {
+			while (current != null && current.cp.getChar() != chr) {
 			prev = current;
 			current = current.next;
 			}
@@ -85,6 +88,8 @@ public class List {
 			size--;
 			return true;
 				}
+				
+
 
     /** Returns the CharData object at the specified index in this list. 
      *  If the index is negative or is greater than the size of this list, 
