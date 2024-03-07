@@ -45,7 +45,7 @@ public class LanguageModel {
 			chrTotal += current.cp.count;
 			current = current.next;
                    }
-			current=probs.first();
+			current=probs.first;
 			double cumuProab=0.0;
 			while (current !=null){
 				current.cp.p=(double)(current.cp.count/chrTotal);
