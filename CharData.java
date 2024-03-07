@@ -1,7 +1,7 @@
 /** Represents a character data object. 
  *  A character data object has a char value,
  *  a counter, and two probability fields. */
-public class CharData {
+private class CharData {
 
 	// a character
 	char chr;
