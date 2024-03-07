@@ -40,25 +40,19 @@ public class LanguageModel {
 	// characters in the given list. */
 	public void calculateProbabilities(List probs) {				
 		int chrTotal = 0;
-		Node current = probs.first;
+		Node current = probs.getFirstNode();
 		while (current != null) {
 			chrTotal += current.cp.Count;
 			current = current.next;
                    }
-		double cumulativeProb = 0.0;
-		Node current = probs.first;
-		while (current != null) {
-		double probability = (double) current.cp.count / totalChars;
-
-		cumulativeProb += probability;
-		current.cp.probability = probability;
-		current.cp.cumulativeProbability = cumulativeProb;
-		
-		current = current.next;
-}
-
-				   
-
+			current=probs.getFirstNode();
+			double cumuProab=0.0;
+			while (current !=null){
+				current.cp.p=(double)(current.cp.count/chrTotal);
+				cumuProab+=current.cp.p;
+				current.cp.cp=cumuProab;
+				current=current.next;
+			}
 	}
 
     // Returns a random character from the given probabilities list.
