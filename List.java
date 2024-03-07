@@ -71,8 +71,16 @@ public class List {
      *  increments its counter. Otherwise, adds a new CharData object with the
      *  given chr to the beginning of this list. */
     public void update(char chr) {
-        // Your code goes here
+        int index= indexOf(chr);
+		if (index!=-1){
+			CharData chrData=get (index);
+			chrData.count++;
+		}else{
+			addFirst(chr);
+		}
+		
     }
+	
 
     /** GIVE If the given character exists in one of the CharData objects
      *  in this list, removes this CharData object from the list and returns
