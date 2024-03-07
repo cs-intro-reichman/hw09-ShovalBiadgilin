@@ -40,9 +40,17 @@ public class List {
    
 
     /** GIVE Textual representation of this list. */
-    public String toString() {	
-    }
-
+    public String toString() {
+				if (size == 0) return "()";
+				String str = "(";
+				Node current = first;
+				while (current != null) {
+				str += current.cp.toString();
+				current = current.next;
+				}
+				return str;
+				}
+	
     /** Returns the index of the first CharData object in this list
      *  that has the same chr value as the given char,
      *  or -1 if there is no such object in this list. */
