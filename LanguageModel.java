@@ -57,7 +57,7 @@ public class LanguageModel {
 
     // Returns a random character from the given probabilities list.
 	public char getRandomChar(List probs) {
-		// Your code goes here
+		return null;
 	}
 
     /**
@@ -68,7 +68,7 @@ public class LanguageModel {
 	 * @return the generated text
 	 */
 	public String generate(String initialText, int textLength) {
-		// Your code goes here
+		return null;
 	}
 
     /** Returns a string representing the map of this language model. */
